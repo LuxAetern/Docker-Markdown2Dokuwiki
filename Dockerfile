@@ -14,5 +14,6 @@ RUN apt-get update && \
 
 	
 ADD /scripts/clone.sh /root/clone.sh
+WORKDIR /root/
 RUN chmod +x /root/clone.sh
 VOLUME /root/output
