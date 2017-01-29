@@ -10,6 +10,8 @@ RUN apt update && \
 	dpkg -i pandoc-1.19.1-1-amd64.deb && \
 	git clone https://github.com/imarin2/Opentotum.wiki.git && \
 	mkdir /root/output
+	crontab -l | { cat; echo "*/30 * * * * /root/clone.sh"; } | crontab -
 	
-ADD https://github.com/LuxAetern/Docker-Markdown2Dokuwiki/blob/master/scripts/clone.sh /root/clone.sh
+ADD /scripts/clone.sh /root/clone.sh
+RUN chmod +x /root/clone.sh
 VOLUME /root/output
