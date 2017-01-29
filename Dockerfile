@@ -10,4 +10,5 @@ RUN apt update && \
 	git clone https://github.com/imarin2/Opentotum.wiki.git && \
 	mkdir /root/output
 	
+ADD https://github.com/LuxAetern/Docker-Markdown2Dokuwiki/blob/master/scripts/clone.sh /root/clone.sh
 VOLUME /root/output
